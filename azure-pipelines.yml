@@ -18,19 +18,26 @@ stages:
           displayName: TFInstallation
           inputs:
             terraformVersion: 'latest'
-        
+  - stage: TFinit
+    jobs:
+    - job: TFinit 
+      steps:
         - task: TerraformTask@5
-          displayName: TFinit
+          displayName: TFinit phase
           inputs:
-             provider: 'azurerm'
-             command: 'init'
-             backendAzureRmUseEntraIdForAuthentication: false
-             backendServiceArm: 'Azure-Service-connection'
-             backendAzureRmResourceGroupName: 'terrafor-resource-group'
-             backendAzureRmStorageAccountName: 'terraformstorage2026'
-             backendAzureRmContainerName: 'terraform-tfstat'
-             backendAzureRmKey: 'terraform-tfstat'
-
+            provider: 'azurerm'
+            command: 'init'
+            backendAzureRmUseEntraIdForAuthentication: false
+            backendServiceArm: 'Azure-Service-connection'
+            backendAzureRmResourceGroupName: 'terrafor-resource-group'
+            backendAzureRmStorageAccountName: 'terraformstorage2026'
+            backendAzureRmContainerName: 'terraform-tfstat'
+            backendAzureRmKey: 'prod.terraform.tfstate'
+  
+  - stage: TFPlan
+    jobs:
+    - job: PlanPhase
+      steps:
         - task: TerraformTask@5
           inputs:
             provider: 'azurerm'
