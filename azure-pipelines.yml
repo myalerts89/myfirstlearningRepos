@@ -56,6 +56,11 @@ stages:
       displayName: TFInstallation
       inputs:
         terraformVersion: '1.6.6'
+        
+    - script: |
+        which terraform
+        terraform version
+      displayName: Verify Terraform
 
     # ✅ INIT (FIXED)
     - task: TerraformTask@5
