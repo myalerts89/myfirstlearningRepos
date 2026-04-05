@@ -51,16 +51,16 @@ stages:
   - job: TFInstallation
     steps:
 
-    # Install Terraform
-    - task: TerraformInstaller@1
-      displayName: TFInstallation
-      inputs:
-        terraformVersion: '1.6.6'
+    # # Install Terraform
+    # - task: TerraformInstaller@1
+    #   displayName: TFInstallation
+    #   inputs:
+    #     terraformVersion: '1.6.6'
         
-    - script: |
-        which terraform
-        terraform version
-      displayName: Verify Terraform
+    # - script: |
+    #     which terraform
+    #     terraform version
+    #   displayName: Verify Terraform
 
     # ✅ INIT (FIXED)
     - task: TerraformTask@5
