@@ -24,7 +24,6 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'init'
-            environmentServiceNameAzureRM: 'Azure-Service-connection'
             backendAzureRmUseEntraIdForAuthentication: true
             backendServiceArm: 'Azure-Service-connection'
             backendAzureRmResourceGroupName: 'terrafor-resource-group'
