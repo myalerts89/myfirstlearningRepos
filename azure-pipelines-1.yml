@@ -20,7 +20,6 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
     backendAzureRmUseEntraIdForAuthentication: false
     backendServiceArm: 'Azure-Service-connection'
     backendAzureRmResourceGroupName: 'terrafor-resource-group'
