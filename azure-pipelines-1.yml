@@ -18,11 +18,11 @@ steps:
 - task: TerraformTask@5
   displayName: init
   inputs:
-     provider: 'azurerm'
-     command: 'init'
-     backendAzureRmUseEntraIdForAuthentication: false
-     backendServiceArm: 'Azure-Service-connection'
-     backendAzureRmResourceGroupName: 'terraform'
-     backendAzureRmStorageAccountName: 'terraformcloudtfstate'
-     backendAzureRmContainerName: 'terraform'
-     backendAzureRmKey: 'prod.terraform.tfstate'
+    provider: 'azurerm'
+    command: 'init'
+    backendAzureRmUseEntraIdForAuthentication: false
+    backendServiceArm: 'Azure-Service-connection'
+    backendAzureRmResourceGroupName: 'terrafor-resource-group'
+    backendAzureRmStorageAccountName: 'terraformcloudtfstate'
+    backendAzureRmContainerName: 'terraform'
+    backendAzureRmKey: 'prod.terraform.tfstate'
