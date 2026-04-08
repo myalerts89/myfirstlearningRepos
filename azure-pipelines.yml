@@ -17,14 +17,15 @@ stages:
         - task: TerraformTask@5
           displayName: TerraformInit
           inputs:
-              provider: 'azurerm'
-              command: 'init'
-              backendAzureRmUseEntraIdForAuthentication: false
-              backendServiceArm: 'Azure-Service-connection'
-              backendAzureRmResourceGroupName: 'terraform-resource-group'
-              backendAzureRmStorageAccountName: 'terraformstorage2026'
-              backendAzureRmContainerName: 'tfstat'
-              backendAzureRmKey: 'prod.terraform.tfstate'
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+            backendAzureRmUseEntraIdForAuthentication: false
+            backendServiceArm: 'Azure-Service-connection'
+            backendAzureRmResourceGroupName: 'terraform-resource-group'
+            backendAzureRmStorageAccountName: 'terraformstorage2026'
+            backendAzureRmContainerName: 'tfstat'
+            backendAzureRmKey: 'prod.terraform.tfstate'
         
         - task: TerraformTask@5
           displayName: TerraformPlan
